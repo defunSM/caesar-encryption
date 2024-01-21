@@ -2,11 +2,45 @@ import sys
 
 
 def encrypt(message, k):
-    return
+
+    # contain the numerical representation of each letter in the message
+    ord_list = []
+    
+    # find the numerical representation of each letter and place into ord_list
+    for letter in message:
+        numeric_rep = ord(letter)
+        ord_list.append(numeric_rep)
+
+    # shift the numerical representation of each letter by k
+    encrypted_ord_list = [ num + k for num in ord_list ]
+    encrypted_message = ""
+
+    # convert back to characters
+    for encrypted_ord in encrypted_ord_list:
+        encrypted_message += chr(encrypted_ord)
+
+    return encrypted_message
 
 
 def decrypt(message, k):
-    return
+
+    # contain the numerical representation of each letter in the message
+    ord_list = []
+    
+    # find the numerical representation of each letter and place into ord_list
+    for letter in message:
+        numeric_rep = ord(letter)
+        ord_list.append(numeric_rep)
+
+    # shift the numerical representation of each letter back by k to decrypt it
+    decrypted_ord_list = [ num - k for num in ord_list ]
+    decrypted_message = ""
+
+    # convert back to characters
+    for decrypted_ord in decrypted_ord_list:
+        decrypted_message += chr(decrypted_ord)
+
+    return decrypted_message
 
 
 if __name__ == "__main__":
